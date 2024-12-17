@@ -1,0 +1,74 @@
+/* Sayfanın arka plan fotoğrafını ve temel stil ayarlarını belirliyoruz */
+html, body {
+    margin: 0; /* Sayfa kenar boşluklarını sıfırlıyoruz */
+    padding: 0; /* Sayfa içindeki boşlukları sıfırlıyoruz */
+    height: 100%; /* HTML ve body yüksekliği tam ekran olacak */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('img/bg.png'); /* Arka plan fotoğrafı */
+    background-size: cover; /* Arka planın tüm ekranı kaplamasını sağlıyoruz */
+    background-position: top center; /* Fotoğrafın üst kısmı ekranda üstte olacak şekilde konumlandırıyoruz */
+    background-repeat: no-repeat; /* Fotoğrafın tekrarlanmamasını sağlıyoruz */
+    overflow-x: hidden; /* Yatay kaydırmayı engelliyoruz */
+}
+
+/* Sayfa içeriği */
+.page {
+    height: 100vh; /* Her sayfa yüksekliği 1 ekran olacak */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Butonlar */
+button {
+    background-color: #ff00f252;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #fa31f0c0;
+}
+
+/* Buton konumlandırma */
+#page1 button {
+    position: absolute;
+    bottom: 50px;
+    
+}
+
+#page6 button {
+    position: absolute;
+    top: 5500px;
+    height: 20%;
+    width: 20%;
+}
+
+/* Sketchfab embed için pencere stilini ayarlıyoruz */
+.sketchfab-embed-wrapper {
+    width: 100%;
+    max-width: 500px; /* Model penceresi genişliği */
+    height: 300px; /* Model penceresi yüksekliği */
+    margin: 0px auto; /* Pencereyi daha aşağıya taşımak için margin ayarı */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    top: 6700px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
