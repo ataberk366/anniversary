@@ -7,53 +7,69 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="background-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <!-- 1. Sayfa -->
-    <div class="page" id="page1">
-        <button onclick="scrollToPage(2)">Devam Et</button>
-    </div>
+   <!-- Arka plan müziği -->
+   <audio id="backgroundMusic" loop>
+       <source src="background-music.mp3" type="audio/mpeg">
+       Your browser does not support the audio element.
+   </audio>
 
-    <!-- 2. Sayfa -->
-    <div class="page" id="page2">
-        <!-- Boş içerik -->
-    </div>
+   <!-- 1. Sayfa -->
+   <div class="page" id="page1">
+       <button onclick="startMusicAndScroll(2)">Devam Et</button>
+   </div>
 
-    <!-- 3. Sayfa -->
-    <div class="page" id="page3">
-        <!-- Boş içerik -->
-    </div>
+   <!-- 2. Sayfa -->
+   <div class="page" id="page2">
+       <!-- Boş içerik -->
+   </div>
 
-    <!-- 4. Sayfa -->
-    <div class="page" id="page4">
-        <!-- Boş içerik -->
-    </div>
+   <!-- 3. Sayfa -->
+   <div class="page" id="page3">
+       <!-- Boş içerik -->
+   </div>
 
-    <!-- 5. Sayfa -->
-    <div class="page" id="page5">
-        <!-- Boş içerik -->
-    </div>
+   <!-- 4. Sayfa -->
+   <div class="page" id="page4">
+       <!-- Boş içerik -->
+   </div>
 
-    <!-- 6. Sayfa -->
-    <div class="page" id="page6">
-        <button onclick="scrollToPage(7)">Sözleşmeyi Yenile!</button>
-    </div>
+   <!-- 5. Sayfa -->
+   <div class="page" id="page5">
+       <!-- Boş içerik -->
+   </div>
 
-    <!-- 7. Sayfa -->
-    <div class="page" id="page7">
-        <div class="sketchfab-embed-wrapper">
-            <iframe title="Bouquet of yellow roses" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/283c41ce4930423c80c75201f12b4626/embed"></iframe>
-        </div>
-    </div>
+   <!-- 6. Sayfa -->
+   <div class="page" id="page6">
+       <button onclick="scrollToPage(7)">Sözleşmeyi Yenile!</button>
+   </div>
 
-    <script>
-        function scrollToPage(pageNumber) {
-            document.getElementById('page' + pageNumber).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    </script>
+   <!-- 7. Sayfa -->
+   <div class="page" id="page7">
+       <div class="sketchfab-embed-wrapper">
+           <iframe title="Bouquet of yellow roses" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/283c41ce4930423c80c75201f12b4626/embed"></iframe>
+       </div>
+   </div>
+
+   <script>
+       // Sayfaya kaydırma ve müzik başlatma işlevi
+       function startMusicAndScroll(pageNumber) {
+           const music = document.getElementById('backgroundMusic');
+
+           // Müziği başlat
+           music.play().catch(err => {
+               console.error("Müzik başlatılamadı:", err);
+           });
+
+           // Sayfayı kaydır
+           scrollToPage(pageNumber);
+       }
+
+       // Sayfa kaydırma işlevi
+       function scrollToPage(pageNumber) {
+           document.getElementById('page' + pageNumber).scrollIntoView({
+               behavior: 'smooth'
+           });
+       }
+   </script>
 </body>
 </html>
